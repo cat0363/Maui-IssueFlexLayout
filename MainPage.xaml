@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui_IssueFlexLayout.MainPage">
+
+    <Grid RowDefinitions="Auto,*" ColumnDefinitions="Auto,*">
+        <Grid Grid.Row="0" Grid.Column="0" BackgroundColor="Red" HeightRequest="50" WidthRequest="200" />
+        <FlexLayout Grid.Row="0" Grid.Column="1" x:Name="flTestItems" Direction="Row" Wrap="Wrap" BackgroundColor="Blue">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <Border StrokeThickness="1" StrokeShape="RoundRectangle 5,5,5,5" 
+                            BackgroundColor="White" Stroke="Black" HeightRequest="50" 
+                            Margin="2"
+                            FlexLayout.Basis="20%">
+                        <Label Text="{Binding ItemName}" TextColor="Black" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" />
+                    </Border>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </FlexLayout>
+
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Green" />
+    </Grid>
+</ContentPage>
